@@ -12,26 +12,42 @@
       </input>
       <input id="InputClause_17gty8a" label="Work permit">
         <inputExpression id="LiteralExpression_1b9zoui" typeRef="string" />
+        <inputValues id="UnaryTests_0b1js1e">
+          <text><![CDATA["yes","no"]]></text>
+        </inputValues>
       </input>
       <input id="InputClause_0pkrk25" label="Sex">
         <inputExpression id="LiteralExpression_0k2fgmn" typeRef="string" />
+        <inputValues id="UnaryTests_1yaay4h">
+          <text><![CDATA["Male","Female"]]></text>
+        </inputValues>
       </input>
       <input id="InputClause_0yduu10" label="Education Degree">
         <inputExpression id="LiteralExpression_14l1z3n" typeRef="string" />
+        <inputValues id="UnaryTests_1m301ks">
+          <text><![CDATA["Bachelor","Master","Doctor","Higher Education"]]></text>
+        </inputValues>
       </input>
       <input id="InputClause_0vh4r2g" label="Working Experience">
         <inputExpression id="LiteralExpression_0strlhs" typeRef="integer" />
       </input>
       <input id="InputClause_02vpp7x" label="Field of work experience">
         <inputExpression id="LiteralExpression_0a60c7b" typeRef="string" />
+        <inputValues id="UnaryTests_0u295g4">
+          <text><![CDATA["analytics","architecture","banking","development","support"]]></text>
+        </inputValues>
       </input>
-      <output id="output1" label="" name="" typeRef="string" />
+      <output id="output1" label="" name="" typeRef="string">
+        <outputValues id="UnaryTests_0iw72dm">
+          <text><![CDATA["good","bad"]]></text>
+        </outputValues>
+      </output>
       <rule id="row-382234196-1">
         <inputEntry id="UnaryTests_1nlgh8x">
-          <text>25</text>
+          <text><![CDATA[<= 25]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1yq1upn">
-          <text><![CDATA["yes", "no"]]></text>
+          <text><![CDATA["yes"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0tuuunv">
           <text><![CDATA["Male", "Female"]]></text>
@@ -40,59 +56,105 @@
           <text><![CDATA["Bachelor", "Master", "Doctor", "Higher Education"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a7x6fi">
-          <text>10</text>
+          <text><![CDATA[>= 3]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_02ksg21">
           <text><![CDATA["Analytics"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0i8zt30">
-          <text><![CDATA["Diversified"]]></text>
+          <text><![CDATA["good"]]></text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-2">
         <inputEntry id="UnaryTests_1timg12">
-          <text></text>
+          <text>[26..50[</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1leh9ht">
-          <text></text>
+          <text><![CDATA["yes"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ujei1y">
-          <text></text>
+          <text><![CDATA["Male", "Female"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xwo0fk">
-          <text></text>
+          <text><![CDATA["Bachelor", "Master", "Doctor", "Higher Education"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_13cwmnz">
-          <text></text>
+          <text><![CDATA[> 5]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0eckz62">
-          <text></text>
+          <text><![CDATA["analytics", "architecture", "banking", "development", "support"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15rhsw6">
-          <text></text>
+          <text><![CDATA["good"]]></text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-3">
         <inputEntry id="UnaryTests_1a412jr">
-          <text></text>
+          <text><![CDATA[<= 65]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_01chg3n">
-          <text></text>
+          <text><![CDATA["yes", "no"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dewt0l">
-          <text></text>
+          <text><![CDATA["Male", "Female"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1l7snsj">
-          <text></text>
+          <text><![CDATA["Bachelor", "Master", "Doctor", "Higher Education"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgvhgg">
-          <text></text>
+          <text><![CDATA[<= 30]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0us1su3">
-          <text></text>
+          <text><![CDATA["analytics", "architecture", "banking", "development", "support"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01b367q">
-          <text></text>
+          <text><![CDATA["bad"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-382234196-6">
+        <inputEntry id="UnaryTests_0e3l3na">
+          <text><![CDATA[>= 50]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q206cz">
+          <text><![CDATA["no", "yes"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0igmqk3">
+          <text><![CDATA["Male", "Female"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i6sakf">
+          <text><![CDATA["Bachelor", "Master", "Doctor", "Higher Education"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08nqmex">
+          <text><![CDATA[> 3]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hjtyhy">
+          <text><![CDATA["analytics", "architecture", "banking", "development", "support"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zldq07">
+          <text><![CDATA["bad"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-382234196-5">
+        <inputEntry id="UnaryTests_08rw9bb">
+          <text><![CDATA[<= 65]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eb3vdu">
+          <text><![CDATA["no"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vfoxg4">
+          <text><![CDATA["Male", "Female"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ay2pgq">
+          <text><![CDATA["Bachelor", "Master", "Doctor", "Higher Education"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09eop7t">
+          <text><![CDATA[> 2]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p9zh59">
+          <text><![CDATA["analytics", "architecture", "banking", "development", "support"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mtldeh">
+          <text><![CDATA["bad"]]></text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-4">
@@ -109,58 +171,12 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1465gv2">
-          <text></text>
+          <text><![CDATA[< 2]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_18g031y">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1jm8c0q">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="row-382234196-6">
-        <inputEntry id="UnaryTests_0e3l3na">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1q206cz">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0igmqk3">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1i6sakf">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08nqmex">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0hjtyhy">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0zldq07">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="row-382234196-5">
-        <inputEntry id="UnaryTests_08rw9bb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0eb3vdu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0vfoxg4">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ay2pgq">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09eop7t">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1p9zh59">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0mtldeh">
           <text></text>
         </outputEntry>
       </rule>
