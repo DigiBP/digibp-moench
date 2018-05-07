@@ -1,43 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="definitions_0ucz29f" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_0ucz29f" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
   <decision id="decision" name="Skillset matching">
     <extensionElements>
       <biodi:bounds x="200" y="200" width="180" height="80" />
     </extensionElements>
-    <decisionTable id="decisionTable">
-      <input id="input1" label="Age">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Age" camunda:inputVariable="userAge">
         <inputExpression id="inputExpression1" typeRef="integer">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_17gty8a" label="Work permit">
-        <inputExpression id="LiteralExpression_1b9zoui" typeRef="string" />
-        <inputValues id="UnaryTests_0b1js1e">
-          <text><![CDATA["yes","no"]]></text>
-        </inputValues>
+      <input id="InputClause_17gty8a" label="Work permit" camunda:inputVariable="userWorkPermit">
+        <inputExpression id="LiteralExpression_1b9zoui" typeRef="boolean">
+          <text></text>
+        </inputExpression>
       </input>
-      <input id="InputClause_0pkrk25" label="Sex">
-        <inputExpression id="LiteralExpression_0k2fgmn" typeRef="string" />
+      <input id="InputClause_0pkrk25" label="Sex" camunda:inputVariable="userSex">
+        <inputExpression id="LiteralExpression_0k2fgmn" typeRef="string">
+          <text></text>
+        </inputExpression>
         <inputValues id="UnaryTests_1yaay4h">
           <text><![CDATA["Male","Female"]]></text>
         </inputValues>
       </input>
-      <input id="InputClause_0yduu10" label="Education Degree">
-        <inputExpression id="LiteralExpression_14l1z3n" typeRef="string" />
+      <input id="InputClause_0yduu10" label="Education Degree" camunda:inputVariable="userEducationDegree">
+        <inputExpression id="LiteralExpression_14l1z3n" typeRef="string">
+          <text></text>
+        </inputExpression>
         <inputValues id="UnaryTests_1m301ks">
           <text><![CDATA["Bachelor","Master","Doctor","Higher Education"]]></text>
         </inputValues>
       </input>
-      <input id="InputClause_0vh4r2g" label="Working Experience">
-        <inputExpression id="LiteralExpression_0strlhs" typeRef="integer" />
+      <input id="InputClause_0vh4r2g" label="Working Experience" camunda:inputVariable="userExperience">
+        <inputExpression id="LiteralExpression_0strlhs" typeRef="integer">
+          <text></text>
+        </inputExpression>
       </input>
-      <input id="InputClause_02vpp7x" label="Field of work experience">
-        <inputExpression id="LiteralExpression_0a60c7b" typeRef="string" />
+      <input id="InputClause_02vpp7x" label="Field of work experience" camunda:inputVariable="userFieldOfWorkExperience">
+        <inputExpression id="LiteralExpression_0a60c7b" typeRef="string">
+          <text></text>
+        </inputExpression>
         <inputValues id="UnaryTests_0u295g4">
           <text><![CDATA["analytics","architecture","banking","development","support"]]></text>
         </inputValues>
       </input>
-      <output id="output1" label="" name="" typeRef="string">
+      <output id="output1" label="Accept Candidate" name="" typeRef="string">
         <outputValues id="UnaryTests_0iw72dm">
           <text><![CDATA["good","bad"]]></text>
         </outputValues>
@@ -47,7 +54,7 @@
           <text><![CDATA[<= 25]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1yq1upn">
-          <text><![CDATA["yes"]]></text>
+          <text>true</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0tuuunv">
           <text><![CDATA["Male", "Female"]]></text>
@@ -70,7 +77,7 @@
           <text>[26..50[</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1leh9ht">
-          <text><![CDATA["yes"]]></text>
+          <text>true</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ujei1y">
           <text><![CDATA["Male", "Female"]]></text>
@@ -93,7 +100,7 @@
           <text><![CDATA[<= 65]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_01chg3n">
-          <text><![CDATA["yes", "no"]]></text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dewt0l">
           <text><![CDATA["Male", "Female"]]></text>
@@ -116,7 +123,7 @@
           <text><![CDATA[>= 50]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1q206cz">
-          <text><![CDATA["no", "yes"]]></text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0igmqk3">
           <text><![CDATA["Male", "Female"]]></text>
@@ -139,7 +146,7 @@
           <text><![CDATA[<= 65]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0eb3vdu">
-          <text><![CDATA["no"]]></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0vfoxg4">
           <text><![CDATA["Male", "Female"]]></text>
@@ -171,13 +178,13 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1465gv2">
-          <text><![CDATA[< 2]]></text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_18g031y">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1jm8c0q">
-          <text></text>
+          <text><![CDATA["bad"]]></text>
         </outputEntry>
       </rule>
     </decisionTable>
