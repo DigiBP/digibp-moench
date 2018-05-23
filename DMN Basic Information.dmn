@@ -5,73 +5,46 @@
       <biodi:bounds x="200" y="200" width="180" height="80" />
     </extensionElements>
     <decisionTable id="decisionTable" hitPolicy="FIRST">
-      <input id="input1" label="Age" camunda:inputVariable="userAge">
+      <input id="input1" label="Age" camunda:inputVariable="">
         <inputExpression id="inputExpression1" typeRef="integer">
-          <text></text>
+          <text>userAge</text>
         </inputExpression>
       </input>
-      <input id="InputClause_17gty8a" label="Work permit" camunda:inputVariable="userWorkPermit">
+      <input id="InputClause_17gty8a" label="Work permit" camunda:inputVariable="">
         <inputExpression id="LiteralExpression_1b9zoui" typeRef="boolean">
-          <text></text>
+          <text>userWorkPermit</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0pkrk25" label="Sex" camunda:inputVariable="userSex">
+      <input id="InputClause_0pkrk25" label="Sex" camunda:inputVariable="">
         <inputExpression id="LiteralExpression_0k2fgmn" typeRef="string">
-          <text></text>
+          <text>userSex</text>
         </inputExpression>
         <inputValues id="UnaryTests_1yaay4h">
           <text><![CDATA["Male","Female"]]></text>
         </inputValues>
       </input>
-      <input id="InputClause_0yduu10" label="Education Degree" camunda:inputVariable="userEducationDegree">
+      <input id="InputClause_0yduu10" label="Education Degree" camunda:inputVariable="">
         <inputExpression id="LiteralExpression_14l1z3n" typeRef="string">
-          <text></text>
+          <text>userEducationDegree</text>
         </inputExpression>
         <inputValues id="UnaryTests_1m301ks">
           <text><![CDATA["Bachelor","Master","Doctor","Higher Education"]]></text>
         </inputValues>
       </input>
-      <input id="InputClause_0vh4r2g" label="Working Experience" camunda:inputVariable="userExperience">
+      <input id="InputClause_0vh4r2g" label="Working Experience" camunda:inputVariable="">
         <inputExpression id="LiteralExpression_0strlhs" typeRef="integer">
-          <text></text>
+          <text>userExperience</text>
         </inputExpression>
       </input>
-      <input id="InputClause_02vpp7x" label="Field of work experience" camunda:inputVariable="userFieldOfWorkExperience">
+      <input id="InputClause_02vpp7x" label="Field of work experience" camunda:inputVariable="">
         <inputExpression id="LiteralExpression_0a60c7b" typeRef="string">
-          <text></text>
+          <text>userFieldOfWorkExperience</text>
         </inputExpression>
         <inputValues id="UnaryTests_0u295g4">
           <text><![CDATA["analytics","architecture","banking","development","support"]]></text>
         </inputValues>
       </input>
-      <output id="output1" label="Accept Candidate" name="" typeRef="string">
-        <outputValues id="UnaryTests_0iw72dm">
-          <text><![CDATA["good","bad"]]></text>
-        </outputValues>
-      </output>
-      <rule id="row-382234196-1">
-        <inputEntry id="UnaryTests_1nlgh8x">
-          <text><![CDATA[<= 25]]></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1yq1upn">
-          <text>true</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0tuuunv">
-          <text><![CDATA["Male", "Female"]]></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1a3s9p6">
-          <text><![CDATA["Bachelor", "Master", "Doctor", "Higher Education"]]></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0a7x6fi">
-          <text><![CDATA[>= 3]]></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_02ksg21">
-          <text><![CDATA["Analytics"]]></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0i8zt30">
-          <text><![CDATA["good"]]></text>
-        </outputEntry>
-      </rule>
+      <output id="output1" label="Accept Candidate" name="" typeRef="boolean" />
       <rule id="row-382234196-2">
         <inputEntry id="UnaryTests_1timg12">
           <text>[26..50[</text>
@@ -83,7 +56,7 @@
           <text><![CDATA["Male", "Female"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xwo0fk">
-          <text><![CDATA["Bachelor", "Master", "Doctor", "Higher Education"]]></text>
+          <text><![CDATA["Bachelor", "Master", "Doctor", "HigherEducation"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_13cwmnz">
           <text><![CDATA[> 5]]></text>
@@ -92,7 +65,7 @@
           <text><![CDATA["analytics", "architecture", "banking", "development", "support"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15rhsw6">
-          <text><![CDATA["good"]]></text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-3">
@@ -106,7 +79,7 @@
           <text><![CDATA["Male", "Female"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1l7snsj">
-          <text><![CDATA["Bachelor", "Master", "Doctor", "Higher Education"]]></text>
+          <text><![CDATA["Bachelor", "Master", "Doctor", "HigherEducation"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgvhgg">
           <text><![CDATA[<= 30]]></text>
@@ -115,7 +88,7 @@
           <text><![CDATA["analytics", "architecture", "banking", "development", "support"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01b367q">
-          <text><![CDATA["bad"]]></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-6">
@@ -129,7 +102,7 @@
           <text><![CDATA["Male", "Female"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1i6sakf">
-          <text><![CDATA["Bachelor", "Master", "Doctor", "Higher Education"]]></text>
+          <text><![CDATA["Bachelor", "Master", "Doctor", "HigherEducation"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_08nqmex">
           <text><![CDATA[> 3]]></text>
@@ -138,7 +111,7 @@
           <text><![CDATA["analytics", "architecture", "banking", "development", "support"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0zldq07">
-          <text><![CDATA["bad"]]></text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-5">
@@ -152,7 +125,7 @@
           <text><![CDATA["Male", "Female"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ay2pgq">
-          <text><![CDATA["Bachelor", "Master", "Doctor", "Higher Education"]]></text>
+          <text><![CDATA["Bachelor", "Master", "Doctor", "HigherEducation"]]></text>
         </inputEntry>
         <inputEntry id="UnaryTests_09eop7t">
           <text><![CDATA[> 2]]></text>
@@ -161,7 +134,30 @@
           <text><![CDATA["analytics", "architecture", "banking", "development", "support"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0mtldeh">
-          <text><![CDATA["bad"]]></text>
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="row-382234196-1">
+        <inputEntry id="UnaryTests_1nlgh8x">
+          <text><![CDATA[<= 25]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yq1upn">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tuuunv">
+          <text><![CDATA["Male", "Female"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a3s9p6">
+          <text><![CDATA["Bachelor", "Master", "Doctor", "HigherEducation"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a7x6fi">
+          <text><![CDATA[>= 3]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02ksg21">
+          <text><![CDATA["analytics"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i8zt30">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-4">
@@ -184,7 +180,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1jm8c0q">
-          <text><![CDATA["bad"]]></text>
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
