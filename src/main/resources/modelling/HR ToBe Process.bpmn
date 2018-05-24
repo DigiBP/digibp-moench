@@ -24,10 +24,10 @@
         <bpmn:flowNodeRef>EndEvent_1lwcj4y</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0eidbvb</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_075eg7i</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_00nvkwo</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_0vtkz35</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0wla2wz</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>IntermediateThrowEvent_1su6i7d</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_00nvkwo</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_0tz7lpi" name="Candidate">
         <bpmn:flowNodeRef>Task_1d4dhaq</bpmn:flowNodeRef>
@@ -205,10 +205,6 @@
     <bpmn:endEvent id="EndEvent_075eg7i">
       <bpmn:incoming>SequenceFlow_1f9f7s1</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:subProcess id="Task_00nvkwo" name="Onboard candidate">
-      <bpmn:incoming>SequenceFlow_1vd6cuk</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1f9f7s1</bpmn:outgoing>
-    </bpmn:subProcess>
     <bpmn:exclusiveGateway id="ExclusiveGateway_1am3j0y" name="Hired?" default="SequenceFlow_1vd6cuk">
       <bpmn:incoming>SequenceFlow_0zj5vjt</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1vd6cuk</bpmn:outgoing>
@@ -250,6 +246,10 @@
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT5S</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:intermediateCatchEvent>
+    <bpmn:manualTask id="Task_00nvkwo" name="Onboard candidate">
+      <bpmn:incoming>SequenceFlow_1vd6cuk</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1f9f7s1</bpmn:outgoing>
+    </bpmn:manualTask>
   </bpmn:process>
   <bpmn:message id="Message_032qlh1" name="Message_2d53lkh" />
   <bpmn:message id="Message_11iavu7" name="Message_0divvk6" />
@@ -363,9 +363,6 @@
           <dc:Bounds x="2092" y="95" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="SubProcess_0yhm7a0_di" bpmnElement="Task_00nvkwo">
-        <dc:Bounds x="2143" y="-169" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0sik1fs_di" bpmnElement="SequenceFlow_0sik1fs">
         <di:waypoint xsi:type="dc:Point" x="2057" y="91" />
         <di:waypoint xsi:type="dc:Point" x="2057" y="-89" />
@@ -551,6 +548,9 @@
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1554" y="138" width="83" height="24" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ManualTask_1hmp8ks_di" bpmnElement="Task_00nvkwo">
+        <dc:Bounds x="2143" y="-169" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
