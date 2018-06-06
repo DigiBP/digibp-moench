@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.14.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.15.0">
   <bpmn:collaboration id="Collaboration_1nr71jt">
     <bpmn:participant id="Participant_0cw8q33" name="HR " processRef="Process_1wu7j5y" />
   </bpmn:collaboration>
@@ -116,10 +116,10 @@ header;</camunda:script>
 header.put("Content-Type","application/json");
 header;</camunda:script>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">https://hook.integromat.com/4r73pgu1hed8l2javk046dt19f61a19f</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({ "subject": "Interview result", "content": "Although your skills and experience correspond to the requirements profile in some respects, we have chosen another applicant. This was the closest to our desired requirements.", "recipient": userEmail });</camunda:script>
+              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({  "subject": "Rejection notice", "recipient": userEmail, "firstname": userFirstname });</camunda:script>
             </camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/1wmn1m09uwifwp522sw14mmoytoh4nf5</camunda:inputParameter>
             <camunda:outputParameter name="processVariableResponse">
               <camunda:script scriptFormat="JavaScript">response;</camunda:script>
             </camunda:outputParameter>
@@ -244,10 +244,10 @@ header;</camunda:script>
 header.put("Content-Type","application/json");
 header;</camunda:script>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">https://hook.integromat.com/4r73pgu1hed8l2javk046dt19f61a19f</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({ "subject": "Interview result", "content": "Although your skills and experience correspond to the requirements profile in some respects, we have chosen another applicant. This was the closest to our desired requirements.", "recipient": userEmail });</camunda:script>
+              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({  "subject": "Interview result",  "recipient": userEmail, "firstname": userFirstname, "job": candidateaccepted });</camunda:script>
             </camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/enmnjc6ap8l2uge6jrjbu5w9be6xxktd</camunda:inputParameter>
             <camunda:outputParameter name="processVariableResponse">
               <camunda:script scriptFormat="JavaScript">response;</camunda:script>
             </camunda:outputParameter>
