@@ -66,7 +66,7 @@ header;</camunda:script>
       <bpmn:incoming>SequenceFlow_16fqad6</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1ktodrm</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:userTask id="Task_17jvb3r" name="Wait for Interview day." camunda:assignee="demo" camunda:candidateGroups="interviewteam">
+    <bpmn:userTask id="Task_17jvb3r" name="Wait for Interview day." camunda:candidateGroups="interviewteam">
       <bpmn:incoming>SequenceFlow_0u7rj6i</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0tqhxtp</bpmn:outgoing>
     </bpmn:userTask>
@@ -86,7 +86,7 @@ header;</camunda:script>
       <bpmn:endEvent id="EndEvent_09xu8cl">
         <bpmn:incoming>SequenceFlow_1779zha</bpmn:incoming>
       </bpmn:endEvent>
-      <bpmn:userTask id="Task_0h56c7i" name="Entering basic information" camunda:assignee="demo" camunda:candidateGroups="candidate">
+      <bpmn:userTask id="Task_0h56c7i" name="Entering basic information" camunda:candidateGroups="candidate">
         <bpmn:extensionElements>
           <camunda:formData>
             <camunda:formField id="userSex" label="Sex" type="enum">
@@ -111,7 +111,7 @@ header;</camunda:script>
         <bpmn:incoming>SequenceFlow_0vd40yk</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_0x9b0yf</bpmn:outgoing>
       </bpmn:userTask>
-      <bpmn:userTask id="Task_0wl9rs9" name="Entering job related information" camunda:assignee="demo" camunda:candidateGroups="candidate">
+      <bpmn:userTask id="Task_0wl9rs9" name="Entering job related information" camunda:candidateGroups="candidate">
         <bpmn:extensionElements>
           <camunda:formData>
             <camunda:formField id="userFieldOfWorkExperience" label="Choose your main field of work experience" type="enum">
@@ -136,7 +136,7 @@ header;</camunda:script>
         <bpmn:incoming>SequenceFlow_0x9b0yf</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_1779zha</bpmn:outgoing>
       </bpmn:userTask>
-      <bpmn:userTask id="Task_1glfjso" name="Sign in website" camunda:assignee="demo" camunda:candidateGroups="candidate">
+      <bpmn:userTask id="Task_1glfjso" name="Sign in website" camunda:candidateGroups="candidate">
         <bpmn:extensionElements>
           <camunda:formData>
             <camunda:formField id="useremail" label="Email" type="string" defaultValue="demo" />
