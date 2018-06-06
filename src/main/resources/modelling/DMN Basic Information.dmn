@@ -4,7 +4,7 @@
     <extensionElements>
       <biodi:bounds x="200" y="200" width="180" height="80" />
     </extensionElements>
-    <decisionTable id="decisionTable" hitPolicy="ANY">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
       <input id="input1" label="Age" camunda:inputVariable="">
         <inputExpression id="inputExpression1" typeRef="integer">
           <text>userAge</text>
@@ -24,12 +24,9 @@
         </inputValues>
       </input>
       <input id="InputClause_0vh4r2g" label="Working Experience" camunda:inputVariable="">
-        <inputExpression id="LiteralExpression_0strlhs" typeRef="string">
+        <inputExpression id="LiteralExpression_0strlhs" typeRef="integer">
           <text>userExperience</text>
         </inputExpression>
-        <inputValues id="UnaryTests_18ieg6q">
-          <text>"experienced","notexperienced"</text>
-        </inputValues>
       </input>
       <input id="InputClause_02vpp7x" label="Field of work experience" camunda:inputVariable="">
         <inputExpression id="LiteralExpression_0a60c7b" typeRef="string">
@@ -64,7 +61,7 @@
           <text>"Bachelor","Higher Education"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgvhgg">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0us1su3">
           <text>"analytics"</text>
@@ -76,7 +73,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01b367q">
-          <text>Junior analytics officer(parttime)</text>
+          <text>"Junior analytics officer(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-2">
@@ -90,7 +87,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_13cwmnz">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0eckz62">
           <text>"analytics"</text>
@@ -102,7 +99,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15rhsw6">
-          <text>Senior analytics officer(partime)</text>
+          <text>"Senior analytics officer(partime)"</text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-6">
@@ -116,7 +113,7 @@
           <text>"Bachelor", "HigherEducation"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08nqmex">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hjtyhy">
           <text>"analytics"</text>
@@ -128,7 +125,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0zldq07">
-          <text>Analytics officer(partime)</text>
+          <text>"Analytics officer(partime)"</text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-5">
@@ -142,7 +139,7 @@
           <text>"Master", "Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09eop7t">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p9zh59">
           <text>"analytics"</text>
@@ -154,7 +151,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0mtldeh">
-          <text>Analytics officer(partime)</text>
+          <text>"Analytics officer(partime)"</text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-1">
@@ -168,7 +165,7 @@
           <text>"Bachelor","Higher Education"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a7x6fi">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_02ksg21">
           <text>"analytics"</text>
@@ -180,7 +177,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0i8zt30">
-          <text>Junior analytics officer(100%)</text>
+          <text>"Junior analytics officer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="row-382234196-4">
@@ -194,7 +191,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1465gv2">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_18g031y">
           <text>"analytics"</text>
@@ -206,7 +203,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1jm8c0q">
-          <text>Senior analytics officer(100%)</text>
+          <text>"Senior analytics officer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0j3xnh2">
@@ -220,7 +217,7 @@
           <text>"Bachelor", "HigherEducation"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1s9xn9c">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ywimei">
           <text>"analytics"</text>
@@ -232,7 +229,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0i60fhy">
-          <text>Analytics officer(100%)</text>
+          <text>"Analytics officer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_19ctzu6">
@@ -246,7 +243,7 @@
           <text>"Master", "Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1fd344q">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1e4oa13">
           <text>"analytics"</text>
@@ -258,7 +255,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1al69ia">
-          <text>Analytics officer(100%)</text>
+          <text>"Analytics officer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1b5d8f2">
@@ -272,7 +269,7 @@
           <text>"Bachelor","Higher Education"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_100igma">
-          <text>"not experienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1rpn65x">
           <text>"architecture"</text>
@@ -284,7 +281,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1l27kb1">
-          <text>Junior architect(parttime)</text>
+          <text>"Junior architect(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_18ka6at">
@@ -298,7 +295,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0rulmx7">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ojjajq">
           <text>"architecture"</text>
@@ -310,7 +307,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1dglb98">
-          <text>Senior architect(partime)</text>
+          <text>"Senior architect(partime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1o3090t">
@@ -324,7 +321,7 @@
           <text>"Bachelor", "HigherEducation"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_02gz98w">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mt8zp3">
           <text>"architecture"</text>
@@ -336,7 +333,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1orpjr4">
-          <text>Architect(parttime)</text>
+          <text>"Architect(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06gi3dn">
@@ -350,7 +347,7 @@
           <text>"Master", "Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0aja129">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_02kexnh">
           <text>"architecture"</text>
@@ -362,7 +359,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1th10uy">
-          <text>Architect(parttime)</text>
+          <text>"Architect(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1a46cnm">
@@ -376,7 +373,7 @@
           <text>"Bachelor", "HigherEducation"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_107u466">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0khj8q7">
           <text>"architecture"</text>
@@ -388,7 +385,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ir9d0q">
-          <text>Junior architect(100%)</text>
+          <text>"Junior architect(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ceja5c">
@@ -402,7 +399,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_15m9emu">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_12flxiv">
           <text>"architecture"</text>
@@ -414,7 +411,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1g6t4li">
-          <text>Senior architect(100%)</text>
+          <text>"Senior architect(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0pwkk7p">
@@ -428,7 +425,7 @@
           <text>"Bachelor", "HigherEducation"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0h1pz3w">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dvsn11">
           <text>"architecture"</text>
@@ -440,7 +437,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0iwf5t4">
-          <text>Architect(100%)</text>
+          <text>"Architect(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_050xug8">
@@ -454,7 +451,7 @@
           <text>"Master", "Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0r7q96f">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_03thw4s">
           <text>"architecture"</text>
@@ -466,7 +463,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1j7dof4">
-          <text>Architect(100%)</text>
+          <text>"Architect(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0cj35n8">
@@ -480,7 +477,7 @@
           <text>"Bachelor","Higher Education"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_112zbg1">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_13qp5me">
           <text>"security"</text>
@@ -492,7 +489,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_039m2t6">
-          <text>Junior security officer(parttime)</text>
+          <text>"Junior security officer(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1omuq57">
@@ -506,7 +503,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gb93u2">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e1ghc2">
           <text>"security"</text>
@@ -518,7 +515,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1sfgim9">
-          <text>Senior security officer(parttime)</text>
+          <text>"Senior security officer(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_19qsvzt">
@@ -532,7 +529,7 @@
           <text>"Bachelor","Higher Education"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_195w0in">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1twjlz6">
           <text>"security"</text>
@@ -544,7 +541,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wdunnw">
-          <text>security officer(parttime)</text>
+          <text>"Security officer(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00wiarp">
@@ -558,7 +555,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0v9137d">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_18l4pe2">
           <text>"security"</text>
@@ -570,7 +567,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0f9jg5p">
-          <text>security officer(parttime)</text>
+          <text>"Security officer(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_148dvwk">
@@ -584,7 +581,7 @@
           <text>"Bachelor","Higher Education"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_184z41z">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ouq8jo">
           <text>"security"</text>
@@ -596,7 +593,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0sc1a35">
-          <text>Junior security officer(100%)</text>
+          <text>"Junior security officer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1t989h3">
@@ -610,7 +607,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_006uhts">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lrdsbs">
           <text>"security"</text>
@@ -622,7 +619,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_181ska9">
-          <text>Senior security officer(100%)</text>
+          <text>"Senior security officer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ed26n7">
@@ -636,7 +633,7 @@
           <text>"Bachelor", "HigherEducation"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_15na5s0">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0javdew">
           <text>"security"</text>
@@ -648,7 +645,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_072ay7p">
-          <text>security officer(100%)</text>
+          <text>"Security officer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1suqpbe">
@@ -662,7 +659,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gub1of">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nava6s">
           <text>"security"</text>
@@ -674,7 +671,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0a91egw">
-          <text>security officer(100%)</text>
+          <text>"Security officer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1hx11ke">
@@ -688,7 +685,7 @@
           <text>"Bachelor","Higher Education"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ne73pz">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_07bo9w7">
           <text>"development"</text>
@@ -700,7 +697,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wrdwvh">
-          <text>Junior Developer(parttime)</text>
+          <text>"Junior Developer(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1q2lzpo">
@@ -714,7 +711,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ht1vts">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mby4k3">
           <text>"development"</text>
@@ -726,7 +723,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_12m6eyv">
-          <text>Senior Developer(parttime)</text>
+          <text>"Senior Developer(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1tgnh70">
@@ -740,7 +737,7 @@
           <text>"Bachelor","Higher Education"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0m2m0by">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1kqqk1q">
           <text>"development"</text>
@@ -752,7 +749,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0sewjtr">
-          <text>Developer(parttime)</text>
+          <text>"Developer(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1jddr6r">
@@ -766,7 +763,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0t2fueh">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0nm83jt">
           <text>"development"</text>
@@ -778,7 +775,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1riqg7j">
-          <text>Developer(parttime)</text>
+          <text>"Developer(parttime)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_05adet7">
@@ -792,7 +789,7 @@
           <text>"Bachelor","Higher Education"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gc3eie">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ftynqe">
           <text>"development"</text>
@@ -804,7 +801,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0p3jrvg">
-          <text>Junior Developer(100%)</text>
+          <text>"Junior Developer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0h0di4h">
@@ -818,7 +815,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_16agkm2">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_06dgw33">
           <text>"development"</text>
@@ -830,7 +827,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0yuazd5">
-          <text>Senior Developer(100%)</text>
+          <text>"Senior Developer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1tr6tyc">
@@ -844,7 +841,7 @@
           <text>"Bachelor","Higher Education"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1m3bayw">
-          <text>"experienced"</text>
+          <text>&gt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1uuo4ae">
           <text>"development"</text>
@@ -856,7 +853,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0h1fes9">
-          <text>Developer(100%)</text>
+          <text>"Developer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_13tm1t5">
@@ -870,7 +867,7 @@
           <text>"Master","Doctor"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ig0dvs">
-          <text>"notexperienced"</text>
+          <text>&lt;5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0mwtt09">
           <text>"development"</text>
@@ -882,7 +879,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_015pxer">
-          <text>Developer(100%)</text>
+          <text>"Developer(100%)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0j87o1z">
@@ -908,7 +905,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0sxptpl">
-          <text>false</text>
+          <text>"false"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_17h9gkf">
@@ -934,7 +931,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0g4kd8u">
-          <text>false</text>
+          <text>"false"</text>
         </outputEntry>
       </rule>
     </decisionTable>
