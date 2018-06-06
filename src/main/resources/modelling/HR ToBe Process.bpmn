@@ -13,7 +13,6 @@
         <bpmn:flowNodeRef>Task_172cmx7</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_1s6qllm" name="Interview Team">
-        <bpmn:flowNodeRef>Task_17jvb3r</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_18b038t</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1xrat5p</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ExclusiveGateway_1am3j0y</bpmn:flowNodeRef>
@@ -66,10 +65,6 @@ header;</camunda:script>
       <bpmn:incoming>SequenceFlow_16fqad6</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1ktodrm</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:userTask id="Task_17jvb3r" name="Wait for Interview day." camunda:candidateGroups="interviewteam">
-      <bpmn:incoming>SequenceFlow_0u7rj6i</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0tqhxtp</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:manualTask id="Task_172cmx7" name="Interview with candidate">
       <bpmn:incoming>SequenceFlow_1ktodrm</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0u7rj6i</bpmn:outgoing>
@@ -103,7 +98,6 @@ header;</camunda:script>
               <camunda:value id="Master" name="Master" />
               <camunda:value id="Doctor" name="Doctor" />
               <camunda:value id="HigherEducation" name="Higher Education" />
-              <camunda:value id="MBA" name="MBA" />
               <camunda:value id="Other" name="Other" />
             </camunda:formField>
           </camunda:formData>
@@ -148,7 +142,7 @@ header;</camunda:script>
       </bpmn:userTask>
       <bpmn:sequenceFlow id="SequenceFlow_0vd40yk" sourceRef="Task_1glfjso" targetRef="Task_0h56c7i" />
     </bpmn:subProcess>
-    <bpmn:sequenceFlow id="SequenceFlow_0u7rj6i" sourceRef="Task_172cmx7" targetRef="Task_17jvb3r" />
+    <bpmn:sequenceFlow id="SequenceFlow_0u7rj6i" sourceRef="Task_172cmx7" targetRef="Task_18b038t" />
     <bpmn:sequenceFlow id="SequenceFlow_1ktodrm" sourceRef="Task_0eidbvb" targetRef="Task_172cmx7" />
     <bpmn:sequenceFlow id="SequenceFlow_16fqad6" sourceRef="ExclusiveGateway_17yw9on" targetRef="Task_0eidbvb">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${candidateaccepted != 'false'}</bpmn:conditionExpression>
@@ -160,7 +154,6 @@ header;</camunda:script>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0l4n0e6" sourceRef="Task_0ophpyt" targetRef="EndEvent_1lwcj4y" />
     <bpmn:sequenceFlow id="SequenceFlow_0iry4rt" sourceRef="StartEvent_0rzptx9" targetRef="Task_1d4dhaq" />
-    <bpmn:sequenceFlow id="SequenceFlow_0tqhxtp" sourceRef="Task_17jvb3r" targetRef="Task_18b038t" />
     <bpmn:exclusiveGateway id="ExclusiveGateway_1am3j0y" name="Hired?">
       <bpmn:incoming>SequenceFlow_1805yw8</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0m9bm4p</bpmn:outgoing>
@@ -225,7 +218,7 @@ header;</camunda:script>
       <bpmn:incoming>SequenceFlow_1dvzmsy</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:manualTask id="Task_18b038t" name="Conduct interview">
-      <bpmn:incoming>SequenceFlow_0tqhxtp</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0u7rj6i</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_17f7jwd</bpmn:outgoing>
     </bpmn:manualTask>
     <bpmn:userTask id="Task_1xrat5p" name="Review candidate" camunda:candidateGroups="interviewteam">
@@ -465,9 +458,6 @@ header;</camunda:script>
           <dc:Bounds x="1852" y="-623" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="UserTask_1srm8xv_di" bpmnElement="Task_17jvb3r">
-        <dc:Bounds x="1366" y="-537" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0vd40yk_di" bpmnElement="SequenceFlow_0vd40yk">
         <di:waypoint x="890" y="-1146" />
         <di:waypoint x="957" y="-1146" />
@@ -485,9 +475,10 @@ header;</camunda:script>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0u7rj6i_di" bpmnElement="SequenceFlow_0u7rj6i">
         <di:waypoint x="1416" y="-586" />
-        <di:waypoint x="1416" y="-537" />
+        <di:waypoint x="1416" y="-497" />
+        <di:waypoint x="1531" y="-497" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1386" y="-567" width="90" height="12" />
+          <dc:Bounds x="1386" y="-547.5" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_16l0tbj_di" bpmnElement="SequenceFlow_16l0tbj">
@@ -521,13 +512,6 @@ header;</camunda:script>
       <bpmndi:BPMNShape id="UserTask_15sflko_di" bpmnElement="Task_1xrat5p">
         <dc:Bounds x="1677" y="-537" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_0tqhxtp_di" bpmnElement="SequenceFlow_0tqhxtp">
-        <di:waypoint x="1466" y="-497" />
-        <di:waypoint x="1531" y="-497" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1453.5" y="-518" width="90" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Lane_02mwx5r_di" bpmnElement="Lane_02mwx5r">
         <dc:Bounds x="476" y="-989" width="1739" height="310" />
       </bpmndi:BPMNShape>
