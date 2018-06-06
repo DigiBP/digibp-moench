@@ -251,10 +251,10 @@ header;</camunda:script>
 header.put("Content-Type","application/json");
 header;</camunda:script>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">https://hook.integromat.com/4r73pgu1hed8l2javk046dt19f61a19f</camunda:inputParameter>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="JavaScript">out = JSON.stringify( {  "subject": "No suitable job offers at the moment",  "recipient": userEmail, "firstname": userFirstname } );</camunda:script>
             </camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/1wmn1m09uwifwp522sw14mmoytoh4nf5</camunda:inputParameter>
             <camunda:outputParameter name="processVariableResponse">
               <camunda:script scriptFormat="JavaScript">response;</camunda:script>
             </camunda:outputParameter>
