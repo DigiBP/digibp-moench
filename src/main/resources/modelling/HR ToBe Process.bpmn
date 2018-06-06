@@ -67,11 +67,6 @@ header;</camunda:script>
       <bpmn:outgoing>SequenceFlow_1ktodrm</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:userTask id="Task_17jvb3r" name="Wait for Interview day." camunda:assignee="demo" camunda:candidateGroups="interviewteam">
-      <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="FormField_3ojhbj5" type="boolean" />
-        </camunda:formData>
-      </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0u7rj6i</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0tqhxtp</bpmn:outgoing>
     </bpmn:userTask>
