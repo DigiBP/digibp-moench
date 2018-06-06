@@ -52,7 +52,7 @@ header;</camunda:script>
             </camunda:inputParameter>
             <camunda:inputParameter name="url">https://hook.integromat.com/4r73pgu1hed8l2javk046dt19f61a19f</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({ "subject": "Titel aus Camunda", "content": "Inhalt aus Camunda", "recipient": userEmail });</camunda:script>
+              <camunda:script scriptFormat="JavaScript">out = JSON.stringify( {  "subject": "No suitable job offers at the moment",  "recipient": userEmail, "firstname": userFirstname } );</camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="processVariableResponse">
               <camunda:script scriptFormat="JavaScript">response;</camunda:script>
@@ -85,7 +85,7 @@ header;</camunda:script>
             </camunda:inputParameter>
             <camunda:inputParameter name="url">https://hook.integromat.com/tz8zdn5wf1h7gt5923her4rdqk1x8tf2</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">out = JSON.stringify({ "subject": "Possible Job offer", "recipient": userEmail });</camunda:script>
+              <camunda:script scriptFormat="JavaScript">out = JSON.stringify( {  "subject": "Job offer",  "recipient": userEmail, "firstname": userFirstname, "job": candidateaccepted } );</camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="processVariableResponse">
               <camunda:script scriptFormat="JavaScript">response;</camunda:script>
